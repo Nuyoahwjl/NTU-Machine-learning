@@ -135,19 +135,19 @@ print(fruits) # 输出集合，重复的元素被自动去掉
 
 
 # 字典(元素类型可以不相同,元素可以改变,无序,通过键来访问)
-dict={} # 创建空字典
-dict['one']="1-菜鸟教程"
-dict[2]="2-菜鸟工具"
+dic={} # 创建空字典
+dic['one']="1-菜鸟教程"
+dic[2]="2-菜鸟工具"
 tinydict={'name':'runoob','code':1,'site':'www.runoob.com'}
-print(dict['one']) # 输出键为'one'的值
-print(dict[2]) # 输出键为2的值
+print(dic['one']) # 输出键为'one'的值
+print(dic[2]) # 输出键为2的值
 print(tinydict) # 输出完整字典
 print(tinydict.keys()) # 输出所有键
 print(tinydict.values()) # 输出所有值
 # 构造函数dict()直接从键值对元组列表中构建字典
-# dict=dict([('Runoob',1),('Google',2),('Taobao',3)]) 
-# dict1={x:x**2 for x in (2,4,6)} # 字典推导式
-# dict2=dict(Runoob=1,Google=2,Taobao=3) # 关键字参数
+dict_=dict([('Runoob',1),('Google',2),('Taobao',3)])
+dict1={x:x**2 for x in (2,4,6)} # 字典推导式
+dict2=dict(Runoob=1,Google=2,Taobao=3) # 关键字参数
 
 
 # bytes(不可变类型,0-255之间的整数)
@@ -291,3 +291,36 @@ transposed = []
 for i in range(4):
     transposed.append([row[i] for row in matrix])
 print(transposed)
+
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v,end=" ")
+
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
+
+for i in reversed(range(1, 10, 2)):
+    print(i)
+
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for f in sorted(set(basket)):
+    print(f)
+
+
+
+import sys
+print('命令行参数如下:')
+for i in sys.argv:
+   print(i)
+print('\n\nPython 路径为：', sys.path, '\n')
+# 1、import sys 引入 python 标准库中的 sys.py 模块；这是引入某一模块的方法。
+# 2、sys.argv 是一个包含命令行参数的列表。
+# 3、sys.path 包含了一个 Python 解释器自动查找所需模块的路径的列表。
+
+# import module1[, module2[,... moduleN]
