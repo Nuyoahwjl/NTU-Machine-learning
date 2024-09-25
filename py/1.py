@@ -324,3 +324,73 @@ print('\n\nPython 路径为：', sys.path, '\n')
 # 3、sys.path 包含了一个 Python 解释器自动查找所需模块的路径的列表。
 
 # import module1[, module2[,... moduleN]
+# from modname import name1[, name2[, ... nameN]]
+dir(sys)
+print(str(1/7))
+print(repr(1/7))
+print('{}网址： "{}!"'.format('菜鸟教程', 'www.runoob.com'))
+print('{0} 和 {1}'.format('Google', 'Runoob'))
+print('{name}网址： {site}'.format(name='菜鸟教程', site='www.runoob.com'))
+print('站点列表 {0}, {1}, 和 {other}。'.format('Google', 'Runoob', other='Taobao'))
+# !a (使用 ascii()), !s (使用 str()) 和 !r (使用 repr()) 可以用于在格式化某个值之前对其进行转化:
+import math
+print('常量 PI 的值近似为： {!r}。'.format(math.pi))
+print('常量 PI 的值近似为： {!a}。'.format(math.pi))
+print('常量 PI 的值近似为： {!s}。'.format(math.pi))
+# 可选项 ':' 和格式标识符可以跟着字段名。 这就允许对值进行更好的格式化
+print('常量 PI 的值近似为 {0:.3f}。'.format(math.pi))
+
+table = {'Google': 1, 'Runoob': 2, 'Taobao': 3}
+for name, number in table.items():
+    print('{0:10} ==> {1:10d}'.format(name, number))
+for x in table:
+    print(x, table[x])  
+
+
+
+f = open("foo.txt", "w")
+f.write( "Python 是一个非常好的语言。\n是的,的确非常好!!\n" )
+f.close()
+
+f = open("foo.txt", "r")
+str = f.read()
+print(str)
+f.close()
+
+
+f = open("foo.txt", "r")
+str = f.readline()
+print(str,end="")
+str = f.readline()
+print(str)
+f.close()
+
+f = open("foo.txt", "r")
+str = f.readlines()
+print(str)
+f.close()
+
+f = open("foo.txt", "r")
+for line in f:
+    print(line, end='')
+f.close()
+
+f = open("foo1.txt", "w")
+value = ['www.runoob.com', 14]
+print(value)
+s = str(value)
+f.write(s)
+f.close()
+
+# 如果要改变文件指针当前的位置, 可以使用 f.seek(offset, from_what) 函数
+# offset 表示相对于 whence 参数的偏移量，from_what 的值, 如果是 0 表示开头, 如果是 1 表示当前位置, 2 表示文件的结尾
+# seek(x,0) ： 从起始位置即文件首行首字符开始移动 x 个字符
+# seek(x,1) ： 表示从当前位置往后移动x个字符
+# seek(-x,2)：表示从文件的结尾往前移动x个字符
+# from_what 值为默认为0，即文件开头
+f = open('foo2.txt', 'wb+')
+f.write(b'0123456789abcdef')
+f.seek(5)     # 移动到文件的第六个字节
+print(f.read(1))
+f.seek(-3, 2) # 移动到文件的倒数第三字节
+print(f.read(1))
