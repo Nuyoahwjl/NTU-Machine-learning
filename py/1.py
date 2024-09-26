@@ -15,6 +15,7 @@ print(a,b,c,d,e) # 输出变量值
 print(isinstance(a,int)) # 判断变量类型
 
 
+
 # 删除对象引用
 del a
 # print(a) # 报错
